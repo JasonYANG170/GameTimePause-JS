@@ -27,5 +27,6 @@ jobs:
           npm install got
           npm install xmlhttprequest
           npm install node-fetch
-          npm install tough-cookie         
+          npm install tough-cookie   
+          npm install axios
           node ./coupons.js  # 要运行的js脚本，放在根目录下

@@ -1,7 +1,6 @@
 name: coupons # yml文件名
- 
 on:
-   workflow_dispatch:
+  workflow_dispatch:
     inputs:
       previous:
         description: '是否打卡往期课程'
@@ -11,9 +10,11 @@ on:
         options: 
         - 'yes'
         - 'no'
-  schedule:   
-    - cron: '0 9 * * *'   # 定时运行的时间，国际标准时间，北京时间要+8
- 
+  #以上勿动
+  schedule:
+    # UTC4:00(北京UTC+8 12:00点)触发任务
+    - cron: '0 4 * * *'
+
 jobs:
   run-coupons: # 任务名
     runs-on: ubuntu-latest

@@ -1,15 +1,19 @@
 name: coupons # yml文件名
- on:
+on:
   workflow_dispatch:
     inputs:
       previous:
-       
+        description: '是否打卡往期课程'
+        required: true
+        default: 'no'
+        type: choice
+        options: 
+        - 'yes'
+        - 'no'
   #以上勿动
   schedule:
     # UTC4:00(北京UTC+8 12:00点)触发任务
     - cron: '0 4 * * *'
-
-
  
 jobs:
   run-coupons: # 任务名

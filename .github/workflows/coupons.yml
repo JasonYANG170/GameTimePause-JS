@@ -1,9 +1,16 @@
 name: coupons # yml文件名
  
 on:
-  push:
-    branches:
-      - main
+   workflow_dispatch:
+    inputs:
+      previous:
+        description: '是否打卡往期课程'
+        required: true
+        default: 'no'
+        type: choice
+        options: 
+        - 'yes'
+        - 'no'
   schedule:   
     - cron: '0 9 * * *'   # 定时运行的时间，国际标准时间，北京时间要+8
  

@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+const fetch = require("node-fetch");
 // 定义 POST 请求的 URL
 const url = 'https://webapi.leigod.com/api/user/pause';
 // 创建要发送的数据对象

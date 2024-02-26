@@ -2,7 +2,7 @@ name: coupons # yml文件名
 on:
   workflow_dispatch:
     inputs:
-      previous:
+     
         
   #以上勿动
   schedule:

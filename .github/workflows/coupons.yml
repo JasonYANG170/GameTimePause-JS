@@ -1,14 +1,13 @@
-name: ncatest.cx.js
+name: coupons # yml文件名
  
 on:
-  push:
-    branches:
-      - main
+    workflow_dispatch:
+   inputs:
   schedule:   
-    - cron: '0 5 * * *'   #国际标准时间，北京时间+8，即下午1点钟
+    - cron: '0 9 * * *'   # 定时运行的时间，国际标准时间，北京时间要+8
  
 jobs:
-  run-csjs:
+  run-coupons: # 任务名
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main  #采用main分支下的
@@ -21,7 +20,8 @@ jobs:
       - name: Install Dependency       
         run: |
           npm install
+          npm install parse
           npm install got
+          npm install xmlhttprequest
           npm install tough-cookie         
-          node ./scripts/cx.js  #脚本存在根目录scripts文件夹下
- 
+          node ./coupons.js  # 要运行的js脚本，放在根目录下
